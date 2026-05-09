@@ -1,26 +1,59 @@
-//LEGGERE LE ISTRUZIONI NEL FILE README.md
 
-//Import di Classi Java necessarie al funzionamento del programma
 import java.util.Scanner;
 
-// Classe principale, con metodo main
-class Esercizio {
-    // Il programma parte con una chiamata a main().
-    public static void main(String args[])
-    {
-        //Variabili del programma
-        String nome;
+public boolean isEmpty() {
+    return head==null;
+ 
+}
 
-        //Creo l'oggetto in per l'input da tastiera
-        Scanner in = new Scanner( System.in );
+public void enqueue(T dato) {
+    Nodo<T> nuovoNodo=new Nodo<>(dato);
+    if (isEmpty()){
+        head=nuovoNodo;
+        tail=nuovoNodo;
+    }else{
+        tail=nuovoNodo;
+        tail.next=nuovoNodo;
+    }
+} 
 
-        //Leggo l'input da tastiera
-        System.out.print("Inserisci il tuo nome: ");
-        nome = in.nextLine();
-
-        //Output del nome acquisito da tastiera
-        System.out.println("Ciao "+nome+"!");
+public void dequeue (){
+    if (isEmpty){
+        ThrowNewException("La coda è vuola");
+    }
+    T dato=head.dato;
+    head=head.next;
+    if (head==null){
+        tail=null;
     }
 }
 
-//LEGGERE LE ISTRUZIONI NEL FILE README.md
+public T peak(){
+    if (isEmpty()){
+       ThrowNowException("La coda è vuota");
+    }
+    return head.dato;
+}
+
+public int size(){
+    Nodo <T> corrente=head;
+    int contatore=0;
+    while(!corrente==null){
+        corrente=corrente.next;
+        ++contatore;
+    }
+    return contatore;
+}
+
+public toString(){
+    StringBuilder 
+    Nodo <T> corrente=head;
+}
+
+class Esercizio {
+
+    public static void main(String args[])
+    {
+
+    }
+}
